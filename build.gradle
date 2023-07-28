@@ -1,13 +1,16 @@
 plugins {
     id 'java'
+    id 'jacoco-report-aggregation'
 }
 
 group = 'org.turtlemovements'
 version = '1.0-SNAPSHOT'
 
+
 ext{
     junitVersion = '5.10.0'
 }
+
 
 repositories {
     mavenCentral()
@@ -20,4 +23,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+jacoco{
+    toolVersion = "0.8.10"
+}
+
+tasks.named('check') {
+    dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
 }
