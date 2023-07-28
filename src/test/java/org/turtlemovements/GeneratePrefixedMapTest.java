@@ -4,9 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 class GeneratePrefixedMapTest {
-
     final int ROWS = 10;
     final int COLUMNS = 10;
     int[][] map = new int[ROWS][COLUMNS];
