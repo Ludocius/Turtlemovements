@@ -2,7 +2,7 @@ package org.turtlemovements;
 
 public class GeneratePrefixedMap {
 
-    int[][] map;
+     int[][] map;
 
     public GeneratePrefixedMap(int[][] map) {
         this.map = map;
