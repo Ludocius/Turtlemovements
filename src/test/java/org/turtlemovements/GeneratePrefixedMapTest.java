@@ -5,11 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GeneratePrefixedMapTest {
-    final int ROWS = 10;
-    final int COLUMNS = 10;
+    final int ROWS = 20;
+    final int COLUMNS = 20;
     int[][] map = new int[ROWS][COLUMNS];
-    GeneratePrefixedMap generatePrefixedMap;
+    private GeneratePrefixedMap generatePrefixedMap;
 
+    private GeneratePrefixedMapTest(){}
     @BeforeEach
     void startup() {
         generatePrefixedMap = new GeneratePrefixedMap(map);
