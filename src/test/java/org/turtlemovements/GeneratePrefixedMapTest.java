@@ -1,8 +1,10 @@
 package org.turtlemovements;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GeneratePrefixedMapTest {
     final int ROWS = 20;
@@ -17,15 +19,17 @@ class GeneratePrefixedMapTest {
     }
 
     @Test
+    @DisplayName("Test column size")
     void doesTheMapHaveTheColumnsDefined() {
         int columnsSize = generatePrefixedMap.getColumns();
-        Assertions.assertEquals(COLUMNS, columnsSize);
+        assertEquals(COLUMNS, columnsSize);
     }
 
     @Test
+    @DisplayName("Test rows size")
     void doesTheMapHaveTheRowsDefined() {
         int rowsSize = generatePrefixedMap.getRows();
-        Assertions.assertEquals(ROWS, rowsSize);
+        assertEquals(ROWS, rowsSize);
     }
 
 }
