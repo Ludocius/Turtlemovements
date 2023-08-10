@@ -23,9 +23,9 @@ public class Inputs {
         logger.log(infoLog, Messages.WELCOME_TITLE);
         logger.log(infoLog, Messages.START_PROGRAM);
         ValidateInputs.setValidationStartInput(Integer.parseInt(scanner.next()));
-        if (ValidateInputs.counterState == Commands.START_PROGRAM.getData()) {
+        if (ValidateInputs.counterState.getData() == Commands.START_PROGRAM.getData()) {
             logger.log(infoLog, Messages.RUNNING_PROGRAM);
-            while (ValidateInputs.counterState != Commands.EXIT_PROGRAM.getData()) {
+            while (ValidateInputs.counterState.getData() != Commands.EXIT_PROGRAM.getData()) {
                 logger.log(infoLog, Messages.COMMAND_SELECTED);
                 ValidateInputs.setValidatationExitInput(Integer.parseInt(scanner.next()));
             }
