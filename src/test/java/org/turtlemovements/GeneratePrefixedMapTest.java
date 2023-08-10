@@ -3,6 +3,7 @@ package org.turtlemovements;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.turtlemovements.board.GeneratePrefixedMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +16,7 @@ class GeneratePrefixedMapTest {
     private GeneratePrefixedMapTest(){}
     @BeforeEach
     void startup() {
-        generatePrefixedMap = new GeneratePrefixedMap(map);
+        generatePrefixedMap = new GeneratePrefixedMap();
     }
 
     @Test
