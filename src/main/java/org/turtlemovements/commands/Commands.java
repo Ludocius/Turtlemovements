@@ -1,7 +1,12 @@
 package org.turtlemovements.commands;
 
+import lombok.Getter;
+
+@Getter
 public enum Commands {
 
+    START_PROGRAM(0),
+    EXIT_PROGRAM(5),
     PEN_UP(1),
     PEN_DOWN(2),
     TURN_RIGHT(3),
@@ -12,12 +17,7 @@ public enum Commands {
 
     private final int data;
 
-    private Commands(int data){
+    Commands(int data){
         this.data = data;
     }
-
-    public int getData(){
-        return data;
-    }
-
 }
