@@ -30,3 +30,6 @@ jobs:
       uses: gradle/gradle-build-action@a4cf152f482c7ca97ef56ead29bf08bcd953284c # v2.7.0
       with:
         arguments: build
+    - name: Gradle Dependency Submission
+      uses: mikepenz/gradle-dependency-submission@v0.9.0
+
