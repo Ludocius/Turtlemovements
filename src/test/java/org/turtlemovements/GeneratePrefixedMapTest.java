@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.turtlemovements.board.GeneratePrefixedMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class GeneratePrefixedMapTest {
     final int ROWS = 20;
@@ -13,7 +13,9 @@ class GeneratePrefixedMapTest {
     int[][] map = new int[ROWS][COLUMNS];
     private GeneratePrefixedMap generatePrefixedMap;
 
-    private GeneratePrefixedMapTest(){}
+    private GeneratePrefixedMapTest() {
+    }
+
     @BeforeEach
     void startup() {
         generatePrefixedMap = new GeneratePrefixedMap();
@@ -23,14 +25,14 @@ class GeneratePrefixedMapTest {
     @DisplayName("Test column size")
     void doesTheMapHaveTheColumnsDefined() {
         int columnsSize = generatePrefixedMap.getColumns();
-        assertEquals(COLUMNS, columnsSize);
+        assertThat(columnsSize).isEqualTo(COLUMNS);
     }
 
     @Test
     @DisplayName("Test rows size")
     void doesTheMapHaveTheRowsDefined() {
         int rowsSize = generatePrefixedMap.getRows();
-        assertEquals(ROWS, rowsSize);
+        assertThat(rowsSize).isEqualTo(ROWS);
     }
 
 }
