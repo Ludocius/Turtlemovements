@@ -18,4 +18,12 @@ public class GeneratePrefixedMap {
     public int getRows() {
         return map.length;
     }
+
+    public void displayBoard(){
+        for (int x = 0; x < map.length; x++) {
+            for (int y = 0; y < map[x].length; y++) {
+                System.out.print(x + y);
+            }
+        }
+    }
 }

@@ -3,7 +3,7 @@ package org.turtlemovements.commands;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class CommandsTest {
 
@@ -12,7 +12,7 @@ class CommandsTest {
     void testCommandSelectionPenUp() {
         int expectedPenUpSelection = 1;
         int commandPenUpUnderTest = Commands.PEN_UP.getData();
-        assertEquals(expectedPenUpSelection, commandPenUpUnderTest);
+        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
     }
 
     @Test
@@ -20,7 +20,7 @@ class CommandsTest {
     void testCommandSelectionPendDown() {
         int expectedPenUpSelection = 2;
         int commandPenUpUnderTest = Commands.PEN_DOWN.getData();
-        assertEquals(expectedPenUpSelection, commandPenUpUnderTest);
+        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
     }
 
     @Test
@@ -28,7 +28,7 @@ class CommandsTest {
     void testCommandSelectionTurnRight() {
         int expectedPenUpSelection = 3;
         int commandPenUpUnderTest = Commands.TURN_RIGHT.getData();
-        assertEquals(expectedPenUpSelection, commandPenUpUnderTest);
+        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
     }
 
     @Test
@@ -36,7 +36,7 @@ class CommandsTest {
     void testCommandSelectionMoveForward() {
         int expectedPenUpSelection = 5;
         int commandPenUpUnderTest = Commands.MOVE_FORWARD.getData();
-        assertEquals(expectedPenUpSelection, commandPenUpUnderTest);
+        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
     }
 
     @Test
@@ -44,7 +44,7 @@ class CommandsTest {
     void testCommandSelectionDisplay() {
         int expectedPenUpSelection = 6;
         int commandPenUpUnderTest = Commands.DISPLAY.getData();
-        assertEquals(expectedPenUpSelection, commandPenUpUnderTest);
+        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
     }
 
     @Test
@@ -52,6 +52,6 @@ class CommandsTest {
     void testCommandSelectionEndData() {
         int expectedPenUpSelection = 9;
         int commandPenUpUnderTest = Commands.END_DATA.getData();
-        assertEquals(expectedPenUpSelection, commandPenUpUnderTest);
+        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
     }
 }
