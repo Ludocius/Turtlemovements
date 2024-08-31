@@ -9,4 +9,9 @@ import lombok.Setter;
 public class Turtle {
     private int positionInX;
     private int positionInY;
+
+    public Turtle(int initialPositionInX, int initialPositionInY) {
+        this.positionInX = initialPositionInX;
+        this.positionInY = initialPositionInY;
+    }
 }

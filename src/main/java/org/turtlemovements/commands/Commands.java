@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum Commands {
 
     START_PROGRAM(0),
-    EXIT_PROGRAM(5),
+    EXIT_PROGRAM(7),
     PEN_UP(1),
     PEN_DOWN(2),
     TURN_RIGHT(3),
