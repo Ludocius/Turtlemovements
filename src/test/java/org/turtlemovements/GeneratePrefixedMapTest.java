@@ -41,6 +41,7 @@ class GeneratePrefixedMapTest {
         generatePrefixedMap.positionXandY(3, 4);
         generatePrefixedMap.displayBoard();
         assertThat(generatePrefixedMap.map[3][4]).isEqualTo("*");
+
     }
 
 }
