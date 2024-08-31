@@ -35,4 +35,12 @@ class GeneratePrefixedMapTest {
         assertThat(rowsSize).isEqualTo(ROWS);
     }
 
+    @Test
+    @DisplayName("Set value in a specific position")
+    void setTracesInASpecificPosition(){
+        generatePrefixedMap.positionXandY(3, 4);
+        generatePrefixedMap.displayBoard();
+        assertThat(generatePrefixedMap.map[3][4]).isEqualTo("*");
+    }
+
 }
