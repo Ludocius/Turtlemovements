@@ -8,9 +8,8 @@ import org.turtlemovements.board.GeneratePrefixedMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GeneratePrefixedMapTest {
-    final int ROWS = 20;
-    final int COLUMNS = 20;
-    int[][] map = new int[ROWS][COLUMNS];
+    static final int ROWS = 20;
+    static final int COLUMNS = 20;
     private GeneratePrefixedMap generatePrefixedMap;
 
     private GeneratePrefixedMapTest() {
@@ -37,7 +36,7 @@ class GeneratePrefixedMapTest {
 
     @Test
     @DisplayName("Set value in a specific position")
-    void setTracesInASpecificPosition(){
+    void setTracesInASpecificPosition() {
         generatePrefixedMap.positionXandY(3, 4);
         generatePrefixedMap.displayBoard();
         assertThat(generatePrefixedMap.map[3][4]).isEqualTo("*");
