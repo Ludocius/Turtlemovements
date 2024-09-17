@@ -1,8 +1,10 @@
 package org.turtlemovements.commands;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
+@RequiredArgsConstructor
 public enum Commands {
 
     START_PROGRAM(0),
@@ -16,8 +18,4 @@ public enum Commands {
     END_DATA(9);
 
     private final int data;
-
-    Commands(int data){
-        this.data = data;
-    }
 }
