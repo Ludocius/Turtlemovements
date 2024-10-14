@@ -1,7 +1,14 @@
 package org.turtlemovements.exceptions;
 
-public class InputExceptions extends Exception{
-    public InputExceptions(){
-        super("This number is not a command");
+import lombok.experimental.StandardException;
+
+@StandardException
+public class InputExceptions extends RuntimeException {
+    public InputExceptions(int inputEntered) {
+        super("The next character: " + inputEntered + " is not a valid command.");
+    }
+
+    public InputExceptions(int inputEntered, Exception exception) {
+        super("The next character: " + inputEntered + " is not a valid command.", exception);
     }
 }

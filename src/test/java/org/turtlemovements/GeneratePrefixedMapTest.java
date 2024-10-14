@@ -8,8 +8,8 @@ import org.turtlemovements.board.GeneratePrefixedMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GeneratePrefixedMapTest {
-    static final int ROWS = 20;
-    static final int COLUMNS = 20;
+    final int ROWS = 20;
+    final int COLUMNS = 20;
     private GeneratePrefixedMap generatePrefixedMap;
 
     private GeneratePrefixedMapTest() {

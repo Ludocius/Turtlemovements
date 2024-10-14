@@ -5,11 +5,10 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class Messages {
 
-    public static final String WELCOME_TITLE = "START THE PROGRAM: TURTLE GRAPHICS!!!";
-    public static final String RUNNING_PROGRAM = "PROGRAM RUNNING...";
+    public static final String WELCOME_TITLE = "START THE PROGRAM: TURTLE GRAPHICS";
+    public static final String RUNNING_PROGRAM = "PROGRAM RUNNING";
 
     public static final String START_PROGRAM = "PRESS THE KEY 0 TO START THE PROGRAM";
-    public static final String PRESS_A_COMMAND = "PRESS A COMMAND KEY";
     public static final String COMMAND_SELECTED = "YOUR COMMAND SELECTED IS: ";
-    public static final String EXIT_PROGRAM = "THE PROGRAM IS EXITED!!!";
+    public static final String EXIT_PROGRAM = "PRESS THE KEY 7 TO EXIT THE PROGRAM";
 }

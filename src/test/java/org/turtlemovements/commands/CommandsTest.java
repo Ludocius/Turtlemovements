@@ -1,57 +1,51 @@
 package org.turtlemovements.commands;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CommandsTest {
 
-    @Test
-    @DisplayName("test command selection PEN UP")
-    void testCommandSelectionPenUp() {
-        int expectedPenUpSelection = 1;
-        int commandPenUpUnderTest = Commands.PEN_UP.getData();
-        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
+    @DisplayName("test command selection")
+    @ParameterizedTest
+    @MethodSource("provideSources")
+    void testCommandsSelection(int valueEntered, Commands commandExpected) {
+        assertThat(valueEntered).isEqualTo(commandExpected.getData());
     }
 
-    @Test
-    @DisplayName("test command selection PEN DOWN")
-    void testCommandSelectionPendDown() {
-        int expectedPenUpSelection = 2;
-        int commandPenUpUnderTest = Commands.PEN_DOWN.getData();
-        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
+    @DisplayName("test command valid selection")
+    @ParameterizedTest
+    @MethodSource("provideSources")
+    void testGetReturnAValidCommand(int valueEntered) {
+        Commands commands = Commands.returnAValidCommand(valueEntered);
+        assertThat(commands.getData()).isEqualTo(valueEntered);
     }
 
-    @Test
-    @DisplayName("test command selection TURN RIGHT")
-    void testCommandSelectionTurnRight() {
-        int expectedPenUpSelection = 3;
-        int commandPenUpUnderTest = Commands.TURN_RIGHT.getData();
-        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
+    @DisplayName("test command invalid selection")
+    @ParameterizedTest
+    @MethodSource("provideSources")
+    void testGetReturnAInvalidCommand(int valueEntered) {
+        assertThatThrownBy(() -> Commands.returnAValidCommand(valueEntered + 11))
+                .hasMessage("The next character: " + (valueEntered + 11) + " is not a valid command.");
     }
 
-    @Test
-    @DisplayName("test command selection MOVE FORWARD")
-    void testCommandSelectionMoveForward() {
-        int expectedPenUpSelection = 5;
-        int commandPenUpUnderTest = Commands.MOVE_FORWARD.getData();
-        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
-    }
-
-    @Test
-    @DisplayName("test command selection DISPLAY")
-    void testCommandSelectionDisplay() {
-        int expectedPenUpSelection = 6;
-        int commandPenUpUnderTest = Commands.DISPLAY.getData();
-        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
-    }
-
-    @Test
-    @DisplayName("test command selection END DATA")
-    void testCommandSelectionEndData() {
-        int expectedPenUpSelection = 9;
-        int commandPenUpUnderTest = Commands.END_DATA.getData();
-        assertThat(commandPenUpUnderTest).isEqualTo(expectedPenUpSelection);
+    private static Stream<Arguments> provideSources() {
+        return Stream.of(
+                Arguments.of(0, Commands.START_PROGRAM),
+                Arguments.of(1, Commands.PEN_UP),
+                Arguments.of(2, Commands.PEN_DOWN),
+                Arguments.of(3, Commands.TURN_RIGHT),
+                Arguments.of(4, Commands.TURN_LEFT),
+                Arguments.of(5, Commands.MOVE_FORWARD),
+                Arguments.of(6, Commands.DISPLAY),
+                Arguments.of(7, Commands.EXIT_PROGRAM),
+                Arguments.of(9, Commands.END_DATA)
+        );
     }
 }
